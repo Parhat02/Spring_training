@@ -1,8 +1,5 @@
 package com.cydeo.stereotype_annotation.monitorfactory;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 @Primary
