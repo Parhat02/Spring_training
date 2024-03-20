@@ -1,4 +1,4 @@
-package com.cydeo.streotype_annotation.casefactory;
+package com.cydeo.stereotype_annotation.casefactory;
 
 import lombok.Getter;
 import org.springframework.stereotype.Component;
