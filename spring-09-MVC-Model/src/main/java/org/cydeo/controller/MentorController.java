@@ -22,7 +22,7 @@ public class MentorController {
 
         model.addAttribute("mentors", mentors);
 
-        return "mentor/mentor.html";
+        return "mentor/mentor";
     }
 
 }
