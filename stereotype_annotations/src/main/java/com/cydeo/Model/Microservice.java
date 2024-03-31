@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Data
 public class Microservice {
 
-    @NonNull
+    @NonNull //this field is required
     private ExtraHours extraHours;
 
 //    public Microservice(ExtraHours extraHours) {
