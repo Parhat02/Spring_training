@@ -8,7 +8,7 @@
 
 <div align="center">
 
-<form th:object="${mentor}">
+<form th:action="@{/mentor/confirm}" method="post" th:object="${mentor}">
 
     <label>First Name:</label>
     <label>
@@ -20,6 +20,35 @@
         <input type="text" th:field="*{lastName}">
     </label><br>
 
+    <label>Email:</label>
+    <label>
+        <input type="text" th:field="*{email}">
+    </label><br>
+
+    <label>Graduated:</label>
+    <label>
+        <input type="checkbox" th:field="*{graduated}">
+    </label><br>
+
+    <label>Gender:</label>
+    <label>
+        <input type="radio" value="Male" th:field="*{gender}">Male
+        <input type="radio" value="Female" th:field="*{gender}">Female
+    </label><br>
+
+    <label>Batch Number:</label>
+    <label>
+        <select th:field="*{batch}">
+            <option th:each="theBatch : ${batchList}" th:value="${theBatch}" th:text="${theBatch}"></option>
+        </select>
+    </label><br>
+
+    <label>Company:</label>
+    <label>
+        <textarea th:field="*{company}"></textarea>
+    </label><br>
+
+    <button type="submit">Register</button>
 
 </form>
 
