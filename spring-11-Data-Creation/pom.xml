@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cydeo</groupId>
-    <artifactId>spring-11-Data-TableCreattion</artifactId>
+    <artifactId>spring-11-Data-Creation</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-11-Data-TableCreattion</name>
-    <description>spring-11-Data-TableCreattion</description>
+    <name>spring-11-Data-Creation</name>
+    <description>spring-11-Data-Creation</description>
     <properties>
         <java.version>21</java.version>
     </properties>
