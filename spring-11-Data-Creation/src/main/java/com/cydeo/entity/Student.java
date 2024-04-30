@@ -14,9 +14,9 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //id will be generated automatically, postgres will create primary key
     private Long id;
-    //@Column(name="studentFirstName")
+    @Column(name="studentFirstName")
     private String firstName;
-    //@Column(name="studentLastName")
+    @Column(name="studentLastName")
     private String lastName;
     private String email;
 
