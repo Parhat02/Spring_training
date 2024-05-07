@@ -4,6 +4,7 @@ import com.cydeo.enums.UserRole;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -21,6 +22,9 @@ public class AccountDetails extends BaseEntity{
     private Integer age;
 
     @Enumerated(EnumType.STRING)
-    private UserRole userRole;
+    private UserRole role;
+
+    @OneToOne(mappedBy = "accountDetails")
+    private UserAccount userAccount;
 
 }

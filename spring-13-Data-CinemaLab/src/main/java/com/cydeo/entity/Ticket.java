@@ -2,6 +2,7 @@ package com.cydeo.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,10 +14,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Ticket extends BaseEntity{
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private MovieCinema movieCinema;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private UserAccount userAccount;
 
     @Column(columnDefinition = "TIMESTAMP")

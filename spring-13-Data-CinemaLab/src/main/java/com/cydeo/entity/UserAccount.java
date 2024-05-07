@@ -1,6 +1,7 @@
 package com.cydeo.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,11 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserAccount extends BaseEntity{
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private AccountDetails accountDetails;
 
     private String email;
-    private String userName;
+    private String username;
     private String password;
 
 }
