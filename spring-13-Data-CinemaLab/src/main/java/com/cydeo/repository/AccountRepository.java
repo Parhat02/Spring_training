@@ -4,6 +4,7 @@ import com.cydeo.entity.AccountDetails;
 import com.cydeo.enums.UserRole;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -53,8 +54,15 @@ public interface AccountRepository extends JpaRepository<AccountDetails, Long> {
     @Query(value = "select * from account_details where name or address or country or state like '%?1%'", nativeQuery = true)
     List<AccountDetails> findByAgeLessThan(String value);
 
+    @Query(value = "SELECT * FROM account_details WHERE name ILIKE concat('%',?1,'%') OR address  ILIKE concat('%',?1,'%') " +
+            " OR country  ILIKE concat('%',?1,'%') OR state  ILIKE concat('%',?1,'%') OR city  ILIKE concat('%',?1,'%')",nativeQuery = true)
+    List<AccountDetails> retrieveBySearchCriteria(String pattern);
+
 //Write a native query to read all accounts with an age higher than a specific value
     @Query(value = "select * from account_details where age>?1", nativeQuery = true)
     List<AccountDetails> findByAgeGreaterThan(Integer age);
+
+    @Query(value = "SELECT * FROM account_details WHERE age > :age",nativeQuery = true)
+    List<AccountDetails> readAccountAllAgeHigher(@Param("age") Integer age);
 
 }
