@@ -47,6 +47,6 @@ public interface CinemaRepository extends JpaRepository<Cinema, Long> {
 
     //Write a native query to distinct all cinemas by sponsored name
     @Query(value = "SELECT * FROM Cinema WHERE sponsored_name IN (SELECT DISTINCT sponsored_name FROM Cinema)" , nativeQuery = true)
-    List<Cinema> findDistinctBytByName();
+    List<Cinema> findDistinctBySponsoredName();
 
 }

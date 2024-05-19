@@ -37,7 +37,7 @@ public interface UserRepository extends JpaRepository<UserAccount, Long> {
 
     //Write a JPQL query that returns all users?
     @Query("select u from UserAccount u")
-    UserAccount findAllUser();
+    List<UserAccount> findAllUser();
 
     // ------------------- Native QUERIES ------------------- //
 

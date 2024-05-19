@@ -29,8 +29,8 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
     // ------------------- JPQL QUERIES ------------------- //
 
     //Write a JPQL query that returns all tickets are bought from a specific user
-    @Query("SELECT t from Ticket t where t.userAccount = ?1")
-    List<Ticket> allTicketsByUser(UserAccount userAccount);
+    @Query("SELECT t from Ticket t where t.userAccount.id = ?1")
+    List<Ticket> allTicketsByUserId(Long userId);
 
     //Write a JPQL query that returns all tickets between a range of dates
     @Query("SELECT t from Ticket t where t.dateTime between ?1 and ?2")
@@ -72,7 +72,7 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
             "WHERE ua.username ILIKE concat('%',?1,'%') " +
             "OR ad.name ILIKE concat('%',?1,'%') " +
             "OR m.name ILIKE concat('%',?1,'%') ",nativeQuery = true)
-    List<Ticket> ticketsByUserName(String name);
+    List<Ticket> ticketsByName(String name);
 
 
 }

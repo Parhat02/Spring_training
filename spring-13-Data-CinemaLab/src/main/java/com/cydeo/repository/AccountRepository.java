@@ -38,7 +38,7 @@ public interface AccountRepository extends JpaRepository<AccountDetails, Long> {
 
 //Write a JPQL query to list all admin accounts
     @Query("select a from AccountDetails a where a.role='ADMIN'")
-    List<AccountDetails> findAllByRole();
+    List<AccountDetails> findAllAdmin();
 
 //Write a JPQL query to sort all accounts with age
     @Query("select a from AccountDetails a order by a.age")
