@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/courses")
+@RequestMapping("/courses/api/v1")
 public class CourseController {
 
     private final CourseService courseService;
@@ -37,7 +37,7 @@ public class CourseController {
         return courseService.createCourse(courseDTO);
     }
 
-    @PostMapping("{id}")
+    @PutMapping("{id}")
     public void updateCourse(@PathVariable("id") long courseId, @RequestBody CourseDTO courseDTO){
         courseService.updateCourse(courseId, courseDTO);
     }
