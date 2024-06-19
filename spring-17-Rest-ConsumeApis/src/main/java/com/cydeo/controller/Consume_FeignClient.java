@@ -19,4 +19,6 @@ public class Consume_FeignClient {
     public ResponseEntity<ResponseWrapper> getUsers(){
         return ResponseEntity.ok(new ResponseWrapper("UserList Retrieved", userClient.getUsers()));
     }
+
+
 }
