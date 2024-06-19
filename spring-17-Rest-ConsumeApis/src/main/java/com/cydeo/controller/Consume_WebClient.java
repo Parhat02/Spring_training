@@ -24,8 +24,9 @@ public class Consume_WebClient {
         this.genreService = genreService;
     }
 
-    @GetMapping("/flux-movie-cinemas")
-    public Flux<MovieCinemaDTO> readAllCinemaFlux(){
+    // Reactive Way
+    @GetMapping("/flux-movie-cinemas") // http://localhost:8080/flux-movie-cinemas
+    public Flux<MovieCinemaDTO> readAllCinemaFlux(){ // Flux returns more than one object
 
         return Flux.fromIterable(movieCinemaService.findAll());
 
@@ -39,7 +40,7 @@ public class Consume_WebClient {
 //    }
 
     @GetMapping("/mono-movie-cinema/{id}")
-    public ResponseEntity<Mono<MovieCinemaDTO>> readById(@PathVariable("id") Long id){
+    public ResponseEntity<Mono<MovieCinemaDTO>> readById(@PathVariable("id") Long id){ // Mono returns one object
 
         return ResponseEntity.ok(Mono.just(movieCinemaService.findById(id)));
 
