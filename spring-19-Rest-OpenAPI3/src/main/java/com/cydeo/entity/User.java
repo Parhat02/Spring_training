@@ -1,11 +1,11 @@
 package com.cydeo.entity;
 
 import com.cydeo.enums.UserRole;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
 
 @Entity
 @Getter
