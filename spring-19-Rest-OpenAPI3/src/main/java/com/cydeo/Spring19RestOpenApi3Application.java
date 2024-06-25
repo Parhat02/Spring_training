@@ -30,4 +30,8 @@ public class Spring19RestOpenApi3Application {
                         .description("Cydeo application API documentation"))
                 .servers(List.of(new Server().url("https://dev.cydeo.com").description("Dev Environment")));
     }
+
+    //localhost:8080/swagger-ui/index.html
+    //localhost:8080/custom-swagger-url
+
 }
